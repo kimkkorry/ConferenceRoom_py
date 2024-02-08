@@ -38,4 +38,5 @@ def UpdateRoom(Roomname,date, time, phonenum, name, people, password, id):
   conn.commit()
   print("%s님의 예약이 수정되었습니다."%(name))
 
-
+for i in ListRoom("RoomA"):
+  print(i[2])
