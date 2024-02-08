@@ -23,7 +23,7 @@ num = 0
 
 while num != 6:
   print(prompt)
-  num = int(input('원하시는 기능의 번호를 입력해주세요.'))
+  num = int(input('원하시는 기능의 번호를 입력해주세요. : '))
   if num == 1:
     room = int(input('1. RoomA\n2. RoomB\n3. RoomC\n4. RoomD\n5. RoomE\n출력하실 회의실의 번호를 입력해주세요. (ex : 1) : '))
     Room_name = 'Room'

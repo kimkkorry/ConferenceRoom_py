@@ -17,11 +17,14 @@ def room_choice():
       Room_name = 'RoomE'
 
     if Room_name != 'Room' :
-      roomAList = ListRoom(Room_name)
       makedate(Room_name)
       choice_year = input('원하는 날짜의 년도를 입력해 주세요. (ex : 2000) : ')
-      choice_month = input('원하는 날짜의 월을 입력해 주세요. (ex : 5) : ')
-      choice_day = input('원하는 날짜의 일자를 입력해 주세요. (ex : 1) : ')
+      choice_month = int(input('원하는 날짜의 월을 입력해 주세요. (ex : 5) : '))
+      if 0<choice_month and choice_month<10:
+         choice_month = '0'+str(choice_month)
+      choice_day = int(input('원하는 날짜의 일자를 입력해 주세요. (ex : 1) : '))
+      if 0<choice_day and choice_day<10 :
+         choice_day = '0'+str(choice_day)
       date = choice_year+choice_month+choice_day
       make_time(Room_name, date)
       time = int(input('원하는 시간을 선택해 주세요. (ex : 14) : '))

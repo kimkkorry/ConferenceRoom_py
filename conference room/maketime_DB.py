@@ -10,8 +10,8 @@ def make_time(Room_name, choice_date):
                 for i in range(len(Room_name_list)):
                         if j == 12:
                                 continue
-                        elif j == Room_name_list[i][3][:2]:
-                                if choice_date == Room_name_list[i][1].replace('-', '', 2):
+                        elif j == str(Room_name_list[i][3])[:2]:
+                                if choice_date == str(Room_name_list[i][1]).replace('-', '', 2):
                                         continue
                                 else:
                                         able_time.append(j)     
@@ -29,7 +29,7 @@ def checktime(date, time, Roomname):
         check = True
         Rlist = ListRoom(Roomname)
         for i in Rlist:
-                if i[1].replace('-', '', 2) == date :
+                if str(i[1]).replace('-', '', 2) == date :
                         if i[2][:2] == time:
                                 print("이미 예약된 시간입니다.")
                                 check = False

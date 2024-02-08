@@ -18,74 +18,59 @@ def makedate(Room_name):
                 da_te = datetime(year, month, day)
                 if da_te.strftime('%w') == '1':
                         day_week = '월'
-                        ye_ar = int(da_te.strftime('%Y'))
-                        mon_th = int(da_te.strftime('%m'))
-                        da_y = int(da_te.strftime('%d'))
-                        same_day = []
+                        daate = da_te.strftime("%Y-%m-%d")
+                        reservation = 0
                         for i in range(len(Room_name_list)):
-                                if ye_ar == int(Room_name_list[i][0]) and mon_th == int(Room_name_list[i][1]) and da_y == int(Room_name_list[i][2]):
-                                        same_day.append('a')
+                                if daate == str(Room_name_list[i][1]):
+                                        reservation += 1
                                 else:
                                         continue
-                        reservation = len(same_day)
-                        print(f'{ye_ar} - {mon_th} - {da_y}({day_week}) : 예약 {reservation} 건')
+                        print(f'{daate}({day_week}) : 예약 {reservation} 건')
 
                                 
                 elif da_te.strftime('%w') == '2':
                         day_week = '화'
-                        ye_ar = int(da_te.strftime('%Y'))
-                        mon_th = int(da_te.strftime('%m'))
-                        da_y = int(da_te.strftime('%d'))
-                        same_day = []
+                        daate = da_te.strftime("%Y-%m-%d")
+                        reservation = 0
                         for i in range(len(Room_name_list)):
-                                if ye_ar == int(Room_name_list[i][0]) and mon_th == int(Room_name_list[i][1]) and da_y == int(Room_name_list[i][2]):
-                                        same_day.append('a')
+                                if daate == str(Room_name_list[i][1]):
+                                        reservation += 1
                                 else:
                                         continue
-                        reservation = len(same_day)
-                        print(f'{ye_ar} - {mon_th} - {da_y}({day_week}) : 예약 {reservation} 건')
+                        print(f'{daate}({day_week}) : 예약 {reservation} 건')
                         
                 elif da_te.strftime('%w') == '3':
                         day_week = '수'
-                        ye_ar = int(da_te.strftime('%Y'))
-                        mon_th = int(da_te.strftime('%m'))
-                        da_y = int(da_te.strftime('%d'))
-                        same_day = []
+                        daate = da_te.strftime("%Y-%m-%d")
+                        reservation = 0
                         for i in range(len(Room_name_list)):
-                                if ye_ar == int(Room_name_list[i][0]) and mon_th == int(Room_name_list[i][1]) and da_y == int(Room_name_list[i][2]):
-                                        same_day.append('a')
+                                if daate == str(Room_name_list[i][1]):
+                                        reservation += 1
                                 else:
                                         continue
-                        reservation = len(same_day)
-                        print(f'{ye_ar} - {mon_th} - {da_y}({day_week}) : 예약 {reservation} 건')
+                        print(f'{daate}({day_week}) : 예약 {reservation} 건')
                         
                 elif da_te.strftime('%w') == '4':
                         day_week = '목'
-                        ye_ar = int(da_te.strftime('%Y'))
-                        mon_th = int(da_te.strftime('%m'))
-                        da_y = int(da_te.strftime('%d'))
-                        same_day = []
+                        daate = da_te.strftime("%Y-%m-%d")
+                        reservation = 0
                         for i in range(len(Room_name_list)):
-                                if ye_ar == int(Room_name_list[i][0]) and mon_th == int(Room_name_list[i][1]) and da_y == int(Room_name_list[i][2]):
-                                        same_day.append('a')
+                                if daate == str(Room_name_list[i][1]):
+                                        reservation += 1
                                 else:
                                         continue
-                        reservation = len(same_day)
-                        print(f'{ye_ar} - {mon_th} - {da_y}({day_week}) : 예약 {reservation} 건')
+                        print(f'{daate}({day_week}) : 예약 {reservation} 건')
                         
                 elif da_te.strftime('%w') == '5':
                         day_week = '금'
-                        ye_ar = int(da_te.strftime('%Y'))
-                        mon_th = int(da_te.strftime('%m'))
-                        da_y = int(da_te.strftime('%d'))
-                        same_day = []
+                        daate = da_te.strftime("%Y-%m-%d")
+                        reservation = 0
                         for i in range(len(Room_name_list)):
-                                if ye_ar == int(Room_name_list[i][0]) and mon_th == int(Room_name_list[i][1]) and da_y == int(Room_name_list[i][2]):
-                                        same_day.append('a')
+                                if daate == str(Room_name_list[i][1]):
+                                        reservation += 1
                                 else:
                                         continue
-                        reservation = len(same_day)
-                        print(f'{ye_ar} - {mon_th} - {da_y}({day_week}) : 예약 {reservation} 건')
+                        print(f'{daate}({day_week}) : 예약 {reservation} 건')
 
                 else:
                         continue

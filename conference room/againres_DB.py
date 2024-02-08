@@ -29,10 +29,10 @@ def update(Room_name):
           if password == i[6]:
             print(f'{i[4]}님 확인 되셨습니다.')
             print("%s 님의 기존 예약 내역입니다.")
-            print("날짜 : %s\n시간 : %s시 ~ %s시\n전화번호 : %s\n이름 : %s\n인원수 : 총 %s\n분 회의실 : %s\n" %(i[1], i[2][:2], int(i[2][:2])+1, i[3], i[4], i[5], Room_name_str))
+            print("날짜 : %s\n시간 : %s시 ~ %s시\n전화번호 : %s\n이름 : %s\n인원수 : 총 %s\n분 회의실 : %s\n" %(i[1], str(i[2])[:2], int(str(i[2])[:2])+1, i[3], i[4], i[5], Room_name_str))
             newList = againList(i[1], i[2], i[3], i[4], i[5], Room_name_str)
             if newList[5] == Room_name_str:
-              UpdateRoom(Room_name_str, newList[0], newList[1], newList[2], newList[3], newList[4], i[6], i[0])
+              UpdateRoom(Room_name_str, newList[0], newList[1], newList[2], newList[3], newList[4], i[6], id)
             else:
               DeleteRoom(Room_name_str, i[4], i[0])
               InsertRoom(newList[5], newList[0], newList[1], newList[2], newList[3], newList[4], i[6])
