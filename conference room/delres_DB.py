@@ -11,50 +11,38 @@ def del_(Room_name):
         for i in range(len(Room_name_list)):
                name_list.append(Room_name_list[i][4])
 
-        with open(f'{Room_name_str}.csv', 'w') as f:
-                        f.write('년도,월,일,시간,이름,인원,비밀번호\n')
-                        if del_name not in name_list:
-                                print('예약된 정보가 없습니다.')
-                        else:
-                                for i in Room_name_list:
-                                        if del_name == i[4]:
-                                                if name_list.count(del_name) >1 :
-                                                        Same_name_list.append(i)
-                                                else:
-                                                        print(f'{i[0]}년 {i[1]}월 {i[2]}일 {i[3]}시 예약한 {i[4]}님의 예약을 취소하시려면 비밀번호 4자리를 입력해 주세요.')
-                                                        password = str(input('비밀번호 입력 : '))
-                                                        if password == i[6]:
-                                                                print(f'{i[4]}님의 예약이 정상적으로 취소되었습니다.')
-                                                                Room_name_list.remove(i)
-                                                        else:
-                                                                print('비밀번호가 틀렸습니다.')
+        if del_name not in name_list:
+                print('예약된 정보가 없습니다.')
+        else:
+                for i in Room_name_list:
+                        if del_name == i[4]:
+                                if name_list.count(del_name) >1 :
+                                        Same_name_list.append(i)
+                                else:
+                                        print("%s %s시 ~ %s시 예약한 %s님의 예약을 취소하시려면 비밀번호 4자리를 입력해 주세요." %(i[1], i[2], int(i[2])+1, i[4]))
+                                        password = str(input('비밀번호 입력 : '))
+                                        id = 0
+                                        for j in Room_name_list:
+                                                if i[4] == j[4] :
+                                                        id = j[0]
+
+                                        if password == i[6]:
+                                                print(f'{i[4]}님의 예약이 정상적으로 취소되었습니다.')
+                                                DeleteRoom(Room_name_str, i[4], id)
                                         else:
-                                                f.write(f'{i[0]},{i[1]},{i[2]},{i[3]},{i[4]},{i[5]},{i[6]}\n')
-                                if Same_name_list != None:
+                                                print('비밀번호가 틀렸습니다.')
+                
+                if Same_name_list != None:
                                         for i in range(len(Same_name_list)):
-                                                print(f'{i+1}. {Same_name_list[i][0]}년 {Same_name_list[i][1]}월 {Same_name_list[i][2]}일 {Same_name_list[i][3]}시 예약한 {Same_name_list[i][4]}님 외 {int(Same_name_list[i][5])-1}\n')
-                                                SN = []
-                                                SN.append(f'{i+1}')
-                                                SN.append(f'{Same_name_list[i][0]}')
-                                                SN.append(f'{Same_name_list[i][1]}')
-                                                SN.append(f'{Same_name_list[i][2]}')
-                                                SN.append(f'{Same_name_list[i][3]}')
-                                                SN.append(f'{Same_name_list[i][4]}')
-                                                SN.append(f'{Same_name_list[i][5]}')
-                                                SN.append(f'{Same_name_list[i][6]}')
-                                                Same_name_list_2.append(SN)
+                                               print("%s. %s %s시 ~ %s시 예약한 %s님 외 %s분\n " %(i[0], i[1], i[2], int(i[2])+1, i[4]), i[5])
+                                                
                                         Same_name_choice = int(input('예약 취소할 분의 번호를 입력해 주세요. (ex : 1) : '))
                                         for i in Same_name_list_2:
                                                 if Same_name_choice == int(i[0]):
-                                                        print(f'{i[1]}년 {i[2]}월 {i[3]}일 {i[4]}시 예약한 {i[5]}님의 예약을 취소하시려면 비밀번호 4자리를 입력해 주세요.')
+                                                        print("%s %s시 ~ %s시 예약한 %s님의 예약을 취소하시려면 비밀번호 4자리를 입력해 주세요." %(i[1], i[2], int(i[2])+1, i[4]))
                                                         password = str(input('비밀번호 입력 : '))
-                                                        if password == i[7]:
-                                                                print(f'{i[5]}님의 예약이 정상적으로 취소되었습니다.')
-                                                                Same_name_list_2.remove(i)
+                                                        if password == i[6]:
+                                                                print(f'{i[4]}님의 예약이 정상적으로 취소되었습니다.')
+                                                                DeleteRoom(Room_name_str, i[4], i[0])
                                                         else:
                                                                  print('비밀번호가 틀렸습니다.')
-                                                                 f.write(f'{i[1]},{i[2]},{i[3]},{i[4]},{i[5]},{i[6]},{i[7]}\n')                                        
-                                                else:
-                                                        f.write(f'{i[1]},{i[2]},{i[3]},{i[4]},{i[5]},{i[6]},{i[7]}\n')
-                                        for i in Same_name_list_2:        
-                                                f.write(f'{i[1]},{i[2]},{i[3]},{i[4]},{i[5]},{i[6]},{i[7]}\n')
