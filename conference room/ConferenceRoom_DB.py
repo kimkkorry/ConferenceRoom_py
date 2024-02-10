@@ -95,7 +95,7 @@ while num != 6:
       Room_name = 'RoomE'
 
     if Room_name != 'Room' :
-      update(Room_name)
+      Info(Room_name)
     else:
       print("올바른 번호를 입력해주세요.")
   elif num == 6:

@@ -10,6 +10,7 @@ def Info(Room_name):
     if info_name in name_list:    
         for i in Room_name_list:
             if i[4] == info_name:
-                print("%s님 (전화번호 뒷자리 : %s) 외 %s분은 %s %s시 부터 %s시 까지 %s 회의실에 예약되어있습니다.\n" %(i[4], i[3][9:], int(str(i[5]))-1, i[1], i[2][:2], int(str(i[2])[:2])+1, Room_name_str))
+                time = str(i[2])[:2].replace(':', '')
+                print("%s님 (전화번호 뒷자리 : %s) 외 %s분은 %s %s시 부터 %s시 까지 %s 회의실에 예약되어있습니다.\n" %(i[4], i[3][9:], int(str(i[5]))-1, i[1], time, int(time)+1, Room_name_str))
     else:
         print('예약된 정보가 없습니다.')

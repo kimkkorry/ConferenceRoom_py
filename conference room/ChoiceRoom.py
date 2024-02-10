@@ -25,7 +25,7 @@ def room_choice():
       choice_day = int(input('원하는 날짜의 일자를 입력해 주세요. (ex : 1) : '))
       if 0<choice_day and choice_day<10 :
          choice_day = '0'+str(choice_day)
-      date = choice_year+choice_month+choice_day
+      date = str(choice_year)+str(choice_month)+str(choice_day)
       make_time(Room_name, date)
       time = int(input('원하는 시간을 선택해 주세요. (ex : 14) : '))
       if (checktime(date, time, Room_name)):
