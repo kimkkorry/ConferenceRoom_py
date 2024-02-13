@@ -48,6 +48,7 @@ while num != 6:
     room = int(input('1. RoomA\n2. RoomB\n3. RoomC\n4. RoomD\n5. RoomE\n예약하신 회의실의 번호를 입력해주세요. (ex : 1) : '))
     Room_name = 'Room'
     if room == 1:
+      
       Room_name = 'RoomA'
     elif room == 2:
       Room_name = 'RoomB'
