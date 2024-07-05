@@ -1,6 +1,7 @@
 import pymysql
 
-conn = pymysql.connect(host = '13.124.144.111', user = 'usrid', password = 'usrpassword', db = 'ConferenceRoom', charset = 'utf8')
+conn = pymysql.connect(host = 'kimtaeil-mysql.c96o4c2qqivv.ap-northeast-2.rds.amazonaws.com', 
+                       user = 'admin', password = 'aksghk2389', db = 'ConferenceRoom', charset = 'utf8')
 
 cur = conn.cursor()
 
